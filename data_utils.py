@@ -5,7 +5,7 @@ import numpy as np
 from utils import ROOT_DIR
 
 def load_toxicData():
-    train_df = pd.read_csv('./data/ToxicBias/Train.csv')
+    train_df = pd.read_csv('./Data/ToxicBias/Train.csv')
     train_df['bias'] = train_df['bias'].apply(lambda x: 1 if x=='bias' else 0)
     train_sentences = list()
     for i in range(train_df.shape[0]):
