@@ -9,7 +9,7 @@ def load_toxicData():
     train_df['bias'] = train_df['bias'].apply(lambda x: 1 if x=='bias' else 0)
     train_sentences = list()
     for i in range(train_df.shape[0]):
-        d = {'sentence': train_df['comment_text'], 'label': train_df['bias'], 'idx': i}
+        d = {'sentence': train_df['text'], 'label': train_df['bias'], 'idx': i}
         train_sentences.append(d)
     train_labels = list(train_df['bias'])
 
@@ -17,7 +17,7 @@ def load_toxicData():
     test_df['bias'] = test_df['bias'].apply(lambda x: 1 if x=='bias' else 0)
     test_sentences = list()
     for i in range(test_df.shape[0]):
-        d = {'sentence': test_df['comment_text'], 'label': test_df['bias'], 'idx': i}
+        d = {'sentence': test_df['text'], 'label': test_df['bias'], 'idx': i}
         test_sentences.append(d)
     test_labels = list(test_df['bias'])
         
